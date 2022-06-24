@@ -1,3 +1,8 @@
+# Move with left and right arrow keys
+# Shoot with space
+# Catch coins
+# Dont hit monsters with robo
+
 # Pelissä liikut vasemmalle ja oikealle nuolinäppäimillä.
 # Välilyönnillä ammut monstereita.
 # Nappaa robolla kiinni kolikoita, joista saa isot pisteet.
@@ -154,7 +159,7 @@ class Robo:
     def __init__(self, mdpeli):
         self.naytto = mdpeli.naytto
         self.naytto_rect = mdpeli.naytto.get_rect()
-        self.kuva = pygame.image.load("robo.png")
+        self.kuva = pygame.image.load("pictures/robo.png")
         self.rect = self.kuva.get_rect()
         self.rect.midbottom = self.naytto_rect.midbottom
         
@@ -190,7 +195,7 @@ class Monsterit(Sprite):
         super().__init__()
         self.naytto = mdpeli.naytto
         self.naytto_rect = mdpeli.naytto.get_rect()
-        self.image = pygame.image.load("hirvio.png")
+        self.image = pygame.image.load("pictures/hirvio.png")
         self.rect = self.image.get_rect()   
 
         self.rect.x = randint(0, self.naytto_rect.right - self.rect.width)
@@ -206,7 +211,7 @@ class Kolikot(Sprite):
         super().__init__()
         self.naytto = mdpeli.naytto
         self.naytto_rect = mdpeli.naytto.get_rect()
-        self.image = pygame.image.load("kolikko.png")
+        self.image = pygame.image.load("pictures/kolikko.png")
         self.rect = self.image.get_rect()             
 
         self.rect.x = randint(0, self.naytto_rect.right - self.rect.width)
